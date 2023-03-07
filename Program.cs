@@ -8,9 +8,9 @@ namespace MoodAnalyserProblem
         {
             Console.WriteLine("Welcome to Mood Analyser Problem");
 
-            MoodAnalyser mood = new MoodAnalyser();
-            string message = "I am in any Mood";
-            Console.WriteLine(mood.AnalyseMood(message));
+            string message = null;
+            MoodAnalyser mood = new MoodAnalyser(message);
+            Console.WriteLine(mood.AnalyseMood());
         }
     }
 }

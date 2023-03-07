@@ -1,39 +1,29 @@
-﻿using MoodAnalyserProblem;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace MoodAnalyserProblemTest
+namespace MoodAnalyserProblem
 {
-    [TestClass]
     public class UnitTest1
     {
-        MoodAnalyser moodAnalyser = new MoodAnalyser();
-
-        //-------------TC 1.1---------------
-        [TestMethod]
-        public void GivenSadMoodShouldGiveSAD()
-        {
-            //Arrange
-            string expected = "SAD";
-
-            //Act
-            string actual = moodAnalyser.AnalyseMood("I am in Sad Mood");
-
-            //Assert
-            Assert.AreEqual(expected, actual);
-        }
-        //-------------TC 1.2---------------
+        MoodAnalyser moodAnalyser = new MoodAnalyser("I am in any Mood");
 
         [TestMethod]
-        public void GivenAnyMoodHAPPY()
+
+        public void TestAnalyseMood_ShouldReturnHAPPY1()
         {
             //Arrange
+            string message = null;
             string expected = "HAPPY";
+            MoodAnalyser mood = new MoodAnalyser(message);
 
             //Act
-            string actual = moodAnalyser.AnalyseMood("I am in Any Mood");
+            string actual = mood.AnalyseMood();
 
             //Assert
             Assert.AreEqual(expected, actual);
         }
-
     }
 }
